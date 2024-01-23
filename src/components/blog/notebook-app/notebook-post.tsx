@@ -15,7 +15,7 @@ import {
   Flex,
   Box,
   Button,
-  Divider
+  Divider,
 } from "@chakra-ui/react";
 import { FaEye } from "react-icons/fa";
 import { FiGithub } from "react-icons/fi";
@@ -26,7 +26,7 @@ import Carousel from "components/blog/carousel";
 
 export interface PostProps {}
 
-const NotebookPost: React.SFC<PostProps> = () => {
+const NotebookPost: React.FC<PostProps> = () => {
   const textColor = useColorModeValue("gray.500", "gray.200");
   const post = articles[4];
 
@@ -86,7 +86,7 @@ const NotebookPost: React.SFC<PostProps> = () => {
           </Tooltip>
         </HStack>
         <HStack spacing={1} alignItems="center">
-          {post.tags.map(tag => (
+          {post.tags.map((tag) => (
             <Tag
               size="sm"
               padding="0 3px"
@@ -129,7 +129,7 @@ const NotebookPost: React.SFC<PostProps> = () => {
         <Carousel images={post.images} />
       </Box>
       <VStack spacing={5} align={"start"} mt={6}>
-        <Header fontSize={"xl"} mt={0} mb={0}>
+        <Header fontSize={"xl"} mt={0} mb={0} underlineColor="#06b6d4">
           What will you learn?
         </Header>
         <Box fontSize="md">
@@ -142,7 +142,7 @@ const NotebookPost: React.SFC<PostProps> = () => {
         </Box>
       </VStack>
       <VStack spacing={5} align={"start"} mt={6}>
-        <Header fontSize={"xl"} mt={0} mb={0}>
+        <Header fontSize={"xl"} mt={0} mb={0} underlineColor="#06b6d4">
           Built with
         </Header>
         <Box fontSize="md">

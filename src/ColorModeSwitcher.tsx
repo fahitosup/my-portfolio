@@ -4,15 +4,15 @@ import {
   useColorModeValue,
   IconButton,
   IconButtonProps,
-  Tooltip
+  Tooltip,
 } from "@chakra-ui/react";
 import { FaMoon, FaSun } from "react-icons/fa";
 import useSound from "use-sound";
-import lightswitch from "assets/audios/lightswitch.mp3";
+import lightswitch from "./assets/audios/lightswitch.mp3";
 
 type ColorModeSwitcherProps = Omit<IconButtonProps, "aria-label">;
 
-export const ColorModeSwitcher: React.FC<ColorModeSwitcherProps> = props => {
+export const ColorModeSwitcher: React.FC<ColorModeSwitcherProps> = (props) => {
   const { toggleColorMode } = useColorMode();
   const text = useColorModeValue("dark", "light");
   const SwitchIcon = useColorModeValue(FaMoon, FaSun);
@@ -21,8 +21,8 @@ export const ColorModeSwitcher: React.FC<ColorModeSwitcherProps> = props => {
     volume: 0.05,
     sprite: {
       on: [0, 300],
-      off: [500, 300]
-    }
+      off: [500, 300],
+    },
   });
 
   const handleClick = () => {
@@ -45,7 +45,7 @@ export const ColorModeSwitcher: React.FC<ColorModeSwitcherProps> = props => {
         icon={<SwitchIcon />}
         aria-label={`Switch to ${text} mode`}
         _hover={{
-          bg: useColorModeValue("gray.200", "gray.900")
+          bg: useColorModeValue("gray.200", "gray.900"),
         }}
         {...props}
       />

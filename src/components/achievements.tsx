@@ -4,7 +4,7 @@ import {
   FiHome,
   FiEdit2,
   FiUsers,
-  FiBarChart2
+  FiBarChart2,
 } from "react-icons/fi";
 import { VStack, Heading, Box, Link, LinkProps } from "@chakra-ui/react";
 import { TimelineItem } from "./Timeline";
@@ -46,8 +46,8 @@ const InternalLink: React.FC<ExternalLinkProps> = ({
 const Achievements = () => {
   return (
     <PageSlideFade>
-      <Box align="start" mb={6}>
-        <Header mt={0} mb={0}>
+      <Box alignItems="start" mb={6}>
+        <Header mt={0} mb={0} underlineColor="#06b6d4">
           Achievements
         </Header>
       </Box>

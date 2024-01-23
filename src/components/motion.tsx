@@ -1,14 +1,10 @@
-import {
-  Box,
-  Flex,
-  Image,
-  Skeleton,
-  forwardRef,
-} from "@chakra-ui/react";
+import React from "react";
+
+import { Box, Flex, Image, Skeleton, forwardRef } from "@chakra-ui/react";
 import { motion, isValidMotionProp } from "framer-motion";
 import placeholder from "assets/images/placeholder.png";
 
-export const MotionBox = motion.custom(
+export const MotionBox = motion(
   forwardRef((props, ref) => {
     const chakraProps = Object.fromEntries(
       // do not pass framer props to DOM element
@@ -17,7 +13,7 @@ export const MotionBox = motion.custom(
     return <Box ref={ref} {...chakraProps} />;
   })
 );
-export const MotionFlex = motion.custom(
+export const MotionFlex = motion(
   forwardRef((props, ref) => {
     const chakraProps = Object.fromEntries(
       // do not pass framer props to DOM element
@@ -26,19 +22,14 @@ export const MotionFlex = motion.custom(
     return <Flex ref={ref} {...chakraProps} />;
   })
 );
-
-export const MotionImage = motion.custom(
+/*
+export const MotionImage = motion(
   forwardRef((props, ref) => {
     const chakraProps = Object.fromEntries(
       // do not pass framer props to DOM element
       Object.entries(props).filter(([key]) => !isValidMotionProp(key))
     );
-    return (
-        <Image
-          ref={ref}
-          fallbackSrc={placeholder}
-          {...chakraProps}
-        />
-    );
+    return <Image ref={ref} fallbackSrc={placeholder} {...chakraProps} />;
   })
 );
+*/

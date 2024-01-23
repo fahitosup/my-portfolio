@@ -13,7 +13,7 @@ const LiveData = () => {
   const [isLargerThan720] = useMediaQuery("(min-width: 720px)");
   const [isLargerThan982] = useMediaQuery("(min-width: 982px)");
 
-  let columnWidth = 390;
+  let columnWidth: number | string = 390;
   if (isLargerThan982) {
     columnWidth = 390;
   } else {
@@ -47,7 +47,7 @@ const LiveData = () => {
                 description={repo.description}
                 language={repo.language}
                 url={repo.svn_url}
-                created_at={repo.created_at}
+                //created_at={repo.created_at}
                 stargazers_count={repo.stargazers_count}
                 forks_count={repo.forks_count}
               />

@@ -6,10 +6,11 @@ import {
   useColorModeValue,
   Tag,
   Link,
+  Image,
 } from "@chakra-ui/react";
 import { motion, AnimatePresence } from "framer-motion";
 import { getTagColor } from "style/theme";
-import LazyImage from "./lazy-image";
+// import LazyImage from "./lazy-image";
 
 interface ProjectCardProps {
   title: string;
@@ -26,7 +27,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   logo,
   blurHash,
   link,
-  technologies
+  technologies,
 }) => {
   const textColor = useColorModeValue("gray.500", "gray.200");
   const [isOpen, setIsOpen] = React.useState(false);
@@ -48,15 +49,15 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
         cursor="pointer"
         _hover={{ shadow: "lg" }}
       >
-        <LazyImage
+        <Image
           src={logo}
-          blurHash={blurHash}
-          size="sm"
+          // size="sm"
           width={33}
           height={33}
-          layout="fixed"
+          //layout="fixed"
           rounded="md"
-        />
+        />{" "}
+        {/**lazy load */}
         <VStack align="start" justify="flex-start">
           <VStack spacing={0} align="start">
             <motion.div layout>
@@ -67,13 +68,13 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
                   fontWeight="bold"
                   fontSize="md"
                   noOfLines={1}
-                  onClick={e => e.stopPropagation()}
+                  onClick={(e) => e.stopPropagation()}
                   isExternal
                 >
                   {title}
                 </Text>
                 <HStack spacing="1">
-                  {technologies.map(tech => (
+                  {technologies.map((tech) => (
                     <Tag size="sm" colorScheme={getTagColor(tech)}>
                       {tech}
                     </Tag>

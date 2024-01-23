@@ -1,3 +1,5 @@
+/*
+
 import * as React from "react";
 import {
   VStack,
@@ -12,7 +14,7 @@ import {
   Flex,
   Image,
   Badge,
-  Box
+  Box,
 } from "@chakra-ui/react";
 import { Link as NavLink } from "react-router-dom";
 import { FaEye } from "react-icons/fa";
@@ -25,7 +27,7 @@ export interface PostCardProps {
   article: article;
 }
 
-const PostCard: React.SFC<PostCardProps> = ({ article }) => {
+const PostCard: React.FC<PostCardProps> = ({ article }) => {
   const textColor = useColorModeValue("gray.500", "gray.200");
   const devIcon = useColorModeValue(dev, dev2);
 
@@ -123,7 +125,7 @@ const PostCard: React.SFC<PostCardProps> = ({ article }) => {
             </Text>
           </Tooltip>
           <HStack spacing={1} alignItems="center" d={["none", "none", "flex"]}>
-            {article.tags.map(tag => (
+            {article.tags.map((tag) => (
               <Tag
                 size="sm"
                 padding="0 3px"
@@ -136,13 +138,149 @@ const PostCard: React.SFC<PostCardProps> = ({ article }) => {
           </HStack>
         </HStack>
         <HStack spacing={1} alignItems="center" d={["flex", "flex", "none"]}>
-          {article.tags.map(tag => (
+          {article.tags.map((tag) => (
             <Tag
               size="sm"
               padding="0 3px"
               key={tag}
               colorScheme={getTagColor(tag)}
             >
+              {tag}
+            </Tag>
+          ))}
+        </HStack>
+        <Text align="left" fontSize="md" noOfLines={4} color={textColor}>
+          {article.desc}
+        </Text>
+      </VStack>
+    </CardTransition>
+  );
+};
+
+export default PostCard;
+*/
+import React from "react";
+import {
+  VStack,
+  HStack,
+  Heading,
+  Text,
+  Tag,
+  Link,
+  Tooltip,
+  useColorModeValue,
+  Icon,
+  Flex,
+  Image,
+  Badge,
+  Box,
+} from "@chakra-ui/react";
+import { Link as RouterLink } from "react-router-dom";
+import { FaEye } from "react-icons/fa";
+import { getTagColor } from "style/theme";
+import dev from "assets/images/logos/dev.png";
+import dev2 from "assets/images/logos/dev_white.png";
+import { CardTransition } from "components/page-transitions";
+
+export interface Article {
+  external: boolean;
+  link: string;
+  title: string;
+  // isNew: boolean;
+  published: string;
+  views: string;
+  readTime: string;
+  tags: string[];
+  desc?: string;
+}
+
+export interface PostCardProps {
+  article: Article;
+}
+
+const PostCard: React.FC<PostCardProps> = ({ article }) => {
+  const textColor = useColorModeValue("gray.500", "gray.200");
+  const devIcon = useColorModeValue(dev, dev2);
+
+  return (
+    <CardTransition>
+      <VStack
+        spacing={1}
+        p={4}
+        _hover={{ shadow: "md", textDecoration: "none" }}
+        borderWidth="1px"
+        position="relative"
+        rounded="md"
+        bg={useColorModeValue("white", "gray.800")}
+        align="left"
+      >
+        {article.external ? (
+          <Tooltip hasArrow label="Dev.to" placement="top">
+            <Image
+              src={devIcon}
+              width="2rem"
+              height="2rem"
+              position="absolute"
+              right="0.5rem"
+              top="-14px"
+            />
+          </Tooltip>
+        ) : (
+          <Tooltip hasArrow label="mahmad.me" placement="top">
+            <Box position="absolute" right="0.5rem" top="-14px">
+              <Badge variant="solid" colorScheme="blackAlpha">
+                Website
+              </Badge>
+            </Box>
+          </Tooltip>
+        )}
+        <Heading fontSize="lg" alignContent="left" mt={0}>
+          {article.external ? (
+            <Link href={article.link} isExternal>
+              {article.title}
+            </Link>
+          ) : (
+            <RouterLink to={article.link}>{article.title}</RouterLink>
+          )}
+          {/*article.isNew && (
+            <Badge
+              ml="1"
+              mb="1"
+              colorScheme="green"
+              fontSize="0.7em"
+              lineHeight={1.5}
+            >
+              New
+            </Badge>
+          )*/}
+        </Heading>
+        <HStack spacing={2}>
+          <Tooltip hasArrow label="Published" placement="top">
+            <Text fontSize="sm" fontWeight="400" color={textColor}>
+              {article.published}
+            </Text>
+          </Tooltip>
+          <Text fontSize="sm" fontWeight="400" color={textColor}>
+            •
+          </Text>
+          <Tooltip hasArrow label="Views" placement="top">
+            <Flex alignItems="center">
+              <Text fontSize="sm" fontWeight="400" color={textColor}>
+                {article.views}
+              </Text>
+              <Icon as={FaEye} ml={1} color={textColor} />
+            </Flex>
+          </Tooltip>
+          <Text fontSize="sm" fontWeight="600" color={textColor}>
+            •
+          </Text>
+          <Tooltip hasArrow label="Read time" placement="top">
+            <Text fontSize="sm" fontWeight="400" color={textColor}>
+              {article.readTime}
+            </Text>
+          </Tooltip>
+          {article.tags.map((tag) => (
+            <Tag key={tag} size="sm" colorScheme={getTagColor(tag)}>
               {tag}
             </Tag>
           ))}

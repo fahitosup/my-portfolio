@@ -39,7 +39,7 @@ const mobileLinks = [
 ];
 
 interface NavLinkProps {
-  index?: string;
+  index?: number;
   name: string;
   path: string;
   onClose: () => void;

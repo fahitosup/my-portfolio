@@ -7,7 +7,7 @@ import {
   Image,
   HStack,
   Divider,
-  IconButton
+  IconButton,
 } from "@chakra-ui/react";
 import { StoryTimeline } from "./story-timeline";
 import { FaGraduationCap, FaAward, FaMedal } from "react-icons/fa";
@@ -19,13 +19,12 @@ import Section from "./section";
 import { PageSlideFade } from "./page-transitions";
 
 const MyStory = () => {
-
   return (
     <VStack>
       <Section mb={14}>
         <PageSlideFade>
           <VStack>
-            <Header mt={0} mb={1}>
+            <Header mt={0} mb={1} underlineColor="black">
               Developer Story
             </Header>
             {/* <Text
@@ -43,10 +42,7 @@ const MyStory = () => {
         <Box>
           <StoryTimeline year={"2021"} index={0} />
           {companies.map((company, index) => (
-            <StoryTimeline
-              icon={BsFillBriefcaseFill}
-              index={index}
-            >
+            <StoryTimeline icon={BsFillBriefcaseFill} index={index}>
               {" "}
               <HStack>
                 <Image
@@ -105,7 +101,8 @@ const MyStory = () => {
                 <Divider my={2} />
                 <Text fontSize={[12, 13, 15]}>{institute.role}</Text>
               </StoryTimeline>
-              {institute.awards &&
+
+              {/*institute.awards &&
                 institute.awards.map((award, index1) => (
                   <StoryTimeline icon={FaAward} index={index1 + index + 1}>
                     {" "}
@@ -132,7 +129,7 @@ const MyStory = () => {
                     <Divider my={2} />
                     <Text fontSize={[12, 13, 15]}>{award.description}</Text>
                   </StoryTimeline>
-                ))}
+                ))*/}
 
               <StoryTimeline
                 year={institute.startingYear}

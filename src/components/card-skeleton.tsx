@@ -5,20 +5,20 @@ import {
   Skeleton,
   VStack,
   HStack,
-  useColorModeValue
+  useColorModeValue,
 } from "@chakra-ui/react";
 
 const CardSkeleton = () => {
   const bgColor = useColorModeValue("white", "gray.900");
-  const cards:number[] = [1, 2, 3, 4, 5, 6, 7, 8]
+  const cards: number[] = [1, 2, 3, 4, 5, 6, 7, 8];
 
   return (
     <>
-      {cards.map(id => {
+      {cards.map((id) => {
         return (
           <Box
             key={id}
-            size="xl"
+            boxSize="xl"
             py={2}
             rounded="xl"
             borderWidth="1px"

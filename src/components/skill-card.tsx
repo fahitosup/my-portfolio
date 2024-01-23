@@ -7,7 +7,7 @@ import {
   Box,
   Link,
   Image,
-  Skeleton
+  Skeleton,
 } from "@chakra-ui/react";
 import { usePalette } from "react-palette";
 import { MotionBox } from "./motion";
@@ -52,13 +52,7 @@ const SkillCard = ({ name, image, link, description }) => {
               {loading ? (
                 <Skeleton height={26} width={26} rounded="md" />
               ) : (
-                <Image
-                  src={image}
-                  height={26}
-                  width={26}
-                  layout="fixed"
-                  rounded="md"
-                />
+                <Image src={image} height={26} width={26} rounded="md" />
               )}
             </Box>
             <VStack

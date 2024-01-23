@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Route, Switch, Redirect } from "react-router-dom";
+import { Route, Routes, Navigate } from "react-router-dom";
 import About from "./about";
 import Posts from "./blog/posts";
 import RepositoriesList from "./repositories-list";
@@ -9,7 +9,7 @@ import Achievements from "./achievements";
 import NotebookPost from "./blog/notebook-app/notebook-post";
 // import EducationStory from "./education-story";
 import MyStory from "./my-story";
-
+/*
 const routes = [
   { path: "/", exact: true, name: "Home", component: Home },
   { path: "/about", exact: true, name: "About", component: About },
@@ -34,19 +34,27 @@ const routes = [
     component: MyStory,
   },
 ];
+*/
 const Navigation = () => {
   return (
-    <Switch>
-      {routes.map((route, idx) => (
+    <Routes>
+      {/*routes.map((route, idx) => (
         <Route
           key={idx}
           exact={route.exact}
           path={route.path}
           render={(props) => <route.component {...props} />}
         />
-      ))}
-      <Redirect to="/" />
-    </Switch>
+      )) */}
+      <Route path="/" element={<Home />} />
+      <Route path="/about" element={<About />} />
+      <Route path="/achievements" element={<Achievements />} />
+      <Route path="/open-source" element={<RepositoriesList />} />
+      <Route path="/tech-stack" element={<TechStack />} />
+      <Route path="/story-timeline" element={<MyStory />} />
+      {/* Redirect unknown routes to Home */}
+      <Route path="*" element={<Navigate to="/" replace />} />
+    </Routes>
   );
 };
 

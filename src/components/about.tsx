@@ -9,7 +9,7 @@ import {
   Tag,
   Image,
   useColorMode,
-  useColorModeValue
+  useColorModeValue,
 } from "@chakra-ui/react";
 import placeholder from "assets/images/placeholder.png";
 import { FaGraduationCap } from "react-icons/fa";
@@ -17,7 +17,7 @@ import { BsFillBriefcaseFill } from "react-icons/bs";
 import {
   PageSlideFade,
   StaggerChildren,
-  CardTransition
+  CardTransition,
 } from "./page-transitions";
 import { MotionBox } from "./motion";
 import { companies, institutes } from "data/data";
@@ -61,14 +61,14 @@ const Card = (props: CardProps) => {
             />
             <Stack spacing={2} pl={3} align="left">
               <Heading
-                align="left"
+                textAlign="left"
                 fontSize="xl"
                 color={`mode.${colorMode}.career.text`}
               >
                 {title}
               </Heading>
               <Heading
-                align="left"
+                textAlign="left"
                 fontSize="sm"
                 color={`mode.${colorMode}.career.subtext`}
               >
@@ -81,7 +81,7 @@ const Card = (props: CardProps) => {
                 alignItems="center"
                 display={["none", "none", "flex", "flex"]}
               >
-                {skills.map(skill => (
+                {skills.map((skill) => (
                   <Tag size="sm" padding="0 3px" key={skill}>
                     {skill}
                   </Tag>
@@ -102,7 +102,7 @@ const Card = (props: CardProps) => {
           alignItems="center"
           display={["flex", "flex", "none", "none"]}
         >
-          {skills.map(skill => (
+          {skills.map((skill) => (
             <Tag size="sm" padding="0 3px" key={skill}>
               {skill}
             </Tag>
@@ -131,10 +131,17 @@ const About = () => {
             </Flex>
           </Heading>
         </MotionBox>
-        <VStack spacing={4} marginBottom={6} align="left" mx={[0, 0, 6]} mt={12}>
+        <VStack
+          spacing={4}
+          marginBottom={6}
+          align="left"
+          mx={[0, 0, 6]}
+          mt={12}
+        >
           {companies.map((company, index) => (
             <MotionBox whileHover={{ y: -5 }} key={index}>
               <Card
+                alt="test"
                 key={index}
                 title={company.title}
                 role={company.role}
@@ -156,10 +163,17 @@ const About = () => {
             </Stack>
           </Flex>
         </Heading>
-        <VStack spacing={4} marginBottom={6} align="left" mx={[0, 0, 6]} mt={12}>
+        <VStack
+          spacing={4}
+          marginBottom={6}
+          align="left"
+          mx={[0, 0, 6]}
+          mt={12}
+        >
           {institutes.map((institute, index) => (
             <MotionBox whileHover={{ y: -5 }} key={index}>
               <Card
+                alt="test2"
                 key={index}
                 title={institute.title}
                 role={institute.role}

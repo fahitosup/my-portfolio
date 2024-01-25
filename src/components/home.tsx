@@ -78,7 +78,7 @@ const Home = () => {
             </Box>{" "}
             and I&apos;m a{" "}
             <Box as="span" whiteSpace="nowrap">
-              full-stack web developer.
+              versatile full-stack web developer versed in many technologies.
             </Box>{" "}
           </Box>
           <Box as="h2" fontSize="2xl" fontWeight="400" mt={5} textAlign="left">
@@ -119,14 +119,14 @@ const Home = () => {
               Highlights
             </Text>
             <UnorderedList textAlign="left" paddingLeft={5} m={0}>
-              <ListItem>
+              {/* <ListItem>
                 <Link as={NavLink} to="/open-source">
                   Github repos
                   <Badge ml="1" colorScheme="green">
                     New
                   </Badge>
                 </Link>
-              </ListItem>
+              </ListItem> */}
 
               <ListItem>
                 <Link as={NavLink} to="/tech-stack">

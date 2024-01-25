@@ -25,7 +25,7 @@ export const projectsList = [
     desc: `This is a minimalistic clone of the Instagram web app allowing users to follow each other, post content and comment on them.`,
     technologies: ["react", "javascript", "node.js", "express", "postgreSQL"],
   },
-  {
+  /* {
     id: 3,
     title: "Parent exammate monitor app",
     logo: parentapp,
@@ -33,7 +33,7 @@ export const projectsList = [
     link: "https://workof.com/",
     desc: `This is a mobile application that monitors progress of students completing a series of tasks such as reading assignments or past exams remotely and also shows their live activity.`,
     technologies: ["react native", "javascript", "aws", "tampermonkey"],
-  },
+  }, */
   {
     id: 4,
     title: "Minimalistic mail app",

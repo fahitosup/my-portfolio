@@ -1,7 +1,7 @@
 {
-  "name": "react-typescript-portfolio-master",
+  "name": "react-typescript-portfolio",
   "version": "1.0.0",
-  "description": "This is the source for my personal website [mahmad](https://mahmad.me).",
+  "description": "This is the source code for my portfolio.",
   "main": "index.js",
   "scripts": {
     "start": "react-scripts start",

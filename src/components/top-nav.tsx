@@ -146,7 +146,7 @@ export default function TopNav() {
                       </HStack>
                     </MenuItem>
                   </Link>
-                  <Link as={RouterNavLink} to="/open-source">
+                  {/* <Link as={RouterNavLink} to="/open-source">
                     <MenuItem>
                       <HStack>
                         <Icon
@@ -158,7 +158,7 @@ export default function TopNav() {
                       </HStack>
                     </MenuItem>
                   </Link>
-
+ */}
                   {/* <Link as={RouterNavLink} to="/story-timeline">
                     <MenuItem>
                       <HStack>

@@ -1,4 +1,5 @@
 import * as React from "react";
+import { useState } from "react";
 import {
   VStack,
   Text,
@@ -14,6 +15,7 @@ import OfflineData from "./offline-data";
 import LiveData from "./live-data";
 import useSound from "use-sound";
 import lightswitch from "../assets/audios/lightswitch.mp3";
+import { log } from "console";
 
 const TURQUOISE = "#06b6d4";
 
@@ -24,7 +26,7 @@ const iconProps = {
 };
 
 const RepositoriesList = () => {
-  const [activeTab, setActiveTab] = React.useState("live");
+  const [activeTab, setActiveTab] = useState("live");
 
   const [play] = useSound(lightswitch, {
     volume: 0.05,

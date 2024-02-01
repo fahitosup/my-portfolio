@@ -19,7 +19,7 @@ export const projectsList = [
     id: 2,
     title: "Instagram web app clone",
     // Need to add the link
-    link: "https://www.hellonotch.com/",
+    link: "https://my-portfolio-five-smoky.vercel.app",
     logo: instagram,
     blurHash: "L0Aer?tjH[tPyAayj[j[00ay%xkB",
     desc: `This is a minimalistic clone of the Instagram web app allowing users to follow each other, post content and comment on them.`,

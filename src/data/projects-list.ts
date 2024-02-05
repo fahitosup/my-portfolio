@@ -39,7 +39,7 @@ export const projectsList = [
     title: "Minimalistic mail app",
     logo: mail,
     blurHash: "L1O^uE0679I00AGT?.H{00y7p2tK",
-    link: "https://mail-app-ni0u.onrender.com/",
+    link: "b",
     desc: `This is a mail app where users can do basic tasks such as compose emails, store sent emails and archive them. Built entirely with Django.`,
     technologies: ["django"],
   },

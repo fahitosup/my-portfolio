@@ -19,7 +19,7 @@ export const projectsList = [
     id: 2,
     title: "Instagram web app clone",
     // Need to add the link
-    link: "https://my-portfolio-five-smoky.vercel.app",
+    link: "https://instagram-social-media-app.vercel.app/",
     logo: instagram,
     blurHash: "L0Aer?tjH[tPyAayj[j[00ay%xkB",
     desc: `This is a minimalistic clone of the Instagram web app allowing users to follow each other, post content and comment on them.`,
@@ -39,7 +39,7 @@ export const projectsList = [
     title: "Minimalistic mail app",
     logo: mail,
     blurHash: "L1O^uE0679I00AGT?.H{00y7p2tK",
-    link: "b",
+    link: "https://instagram-social-media-app.vercel.app/",
     desc: `This is a mail app where users can do basic tasks such as compose emails, store sent emails and archive them. Built entirely with Django.`,
     technologies: ["django"],
   },

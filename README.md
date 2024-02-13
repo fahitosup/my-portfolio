@@ -1,4 +1,4 @@
-This is the source for my personal website [mahmad](https://mahmad.me).
+This is the source for my personal website (https://my-portfolio-five-smoky.vercel.app).
 
 ## Built with
 - [Typescript](https://www.typescriptlang.org/)
@@ -6,11 +6,6 @@ This is the source for my personal website [mahmad](https://mahmad.me).
 - [Chakra UI](https://chakra-ui.com)
 - [Framer Motion](https://www.framer.com/motion/)
 - [react icons](https://react-icons.github.io/react-icons/)
-
-## Screens
-![Home Screen](/src/assets/images/screens/home_page.png)
-![Skills Screen](/src/assets/images/screens/skills.png)
-![OpenSource Screen](/src/assets/images/screens/open_source.png)
 
 ## License
 
